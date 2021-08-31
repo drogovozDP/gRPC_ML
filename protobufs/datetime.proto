@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+message DateTimeRequest {
+    int32 day = 1;
+    int32 time = 2;
+}
+
+
+message TimePrediction {
+    float time = 1;
+}
+
+
+service Prediction {
+    rpc Predict (DateTimeRequest) returns (TimePrediction);
+}
